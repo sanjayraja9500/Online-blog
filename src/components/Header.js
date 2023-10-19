@@ -59,14 +59,14 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                 </MDBNavbarLink>
               </MDBNavbarItem>
               <MDBNavbarItem className='' onClick={() => setActive('addBlog')}>
-                <MDBNavbarLink
-                  href='/addBlog'
+                <Link
+                  to='/addBlog'
                   style={{
                     color: '#fff',
                   }}
                 >
                   Add Blog
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem className='' onClick={() => setActive('about')}>
                 <Link to='/about' style={{ color: '#fff' }}>
