@@ -49,15 +49,9 @@ const Header = ({ active, setActive, user, handleLogout }) => {
           </MDBNavbarToggler>
           <MDBCollapse active={active} navbar>
             <MDBNavbarNav className='me-auto mb-2 mb-lg-0 g-8'>
-              <MDBNavbarItem className='' onClick={() => setActive('home')}>
-                <MDBNavbarLink
-                  aria-current='page'
-                  href='/'
-                  style={{ color: '#fff' }}
-                >
-                  Home
-                </MDBNavbarLink>
-              </MDBNavbarItem>
+              <div className='' onClick={() => setActive('home')}>
+                <Link to='/'>Home</Link>
+              </div>
               <div className='' onClick={() => setActive('addBlog')}>
                 <Link to='/addBlog'>Add Blog</Link>
               </div>
@@ -84,16 +78,16 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                 >
                   {user?.displayName}
                 </p>
-                <Link to='./auth'>
+                <Link to='/auth'>
                   <p className='text-white text-xl mt-2' onClick={handleLogout}>
                     Logout
                   </p>
                 </Link>
               </>
             ) : (
-              <MDBNavbarLink
+              <Link
                 onClick={() => setActive('login')}
-                href='./auth'
+                to='/auth'
                 style={{
                   color: '#fff',
                   display: 'flex',
@@ -101,7 +95,7 @@ const Header = ({ active, setActive, user, handleLogout }) => {
                 }}
               >
                 Login
-              </MDBNavbarLink>
+              </Link>
             )}
           </MDBNavbarItem>
         </MDBContainer>
